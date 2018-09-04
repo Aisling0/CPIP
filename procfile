@@ -1,1 +1,1 @@
-web: gunicorn irish_camping.wsgi:application
+web: gunicorn CPIP_Test.wsgi:application
