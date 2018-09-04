@@ -34,10 +34,8 @@ INSTALLED_APPS = [
 ]
 
 AUTH_USER_MODEL = 'accounts.User'
-AUTHENTICATION_BACKENDS = (
-    'django.contrib.auth.backends.ModelBackend',
-    'accounts.backends.EmailAuth',
-)
+AUTHENTICATION_BACKENDS = ('django.contrib.auth.backends.ModelBackend',
+                           'accounts.backends.EmailAuth',)
 
 LOGIN_URL = '/login/'
 
@@ -106,3 +104,5 @@ MEDIA_URL = '/media/'
 
 # tinymce settings
 TINYMCE_JS_ROOT = os.path.join(BASE_DIR, "static", 'js', 'tinymce', 'tinymce.min.js')
+
+DISQUS_WEBSITE_SHORTNAME = 'CPIP'
