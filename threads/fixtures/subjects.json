@@ -1,0 +1,56 @@
+[
+{
+    "model": "accounts.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$30000$JbZQkX7iZ1xQ$YeXqR2sX8AGKRzRX0bRA0TnoDC76aBT4xs8z/eBfuM4=",
+        "last_login": "2018-08-23T16:59:14.096Z",
+        "is_superuser": false,
+        "username": "aisling1odonovan@gmail.com",
+        "first_name": "",
+        "last_name": "",
+        "email": "aisling1odonovan@gmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2018-08-23T16:59:06.011Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.user",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$30000$sCouWVyCngIz$ByChbUeq98yjFLEk6SfEBUP/Uw1An6Ip/7SVS0LVVx0=",
+        "last_login": "2018-08-30T13:27:15.250Z",
+        "is_superuser": false,
+        "username": "test@mail.com",
+        "first_name": "",
+        "last_name": "",
+        "email": "test@mail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2018-08-30T13:27:06.586Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.user",
+    "pk": 3,
+    "fields": {
+        "password": "pbkdf2_sha256$30000$5gvaHhC7laM9$tZWfAzN0CEZsewyCXd2Jl7HOoRK795qKuGiMa5UHkQo=",
+        "last_login": "2018-09-04T15:17:56.653Z",
+        "is_superuser": true,
+        "username": "odonovanaislingm@gmail.com",
+        "first_name": "",
+        "last_name": "",
+        "email": "odonovanaislingm@gmail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2018-08-30T13:33:10.543Z",
+        "groups": [],
+        "user_permissions": []
+    }
+}
+]
