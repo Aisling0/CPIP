@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% load thread_extras %}
+{% load staticfiles %}
+{% block content %}
+ <section>
+    <div class="row header">
+       <div>
+           <h1></h1>
+           <ol class="breadcrumb">
+               <li class="breadcrumb-item"><a class="breadcrumbtab" href="{% url 'index' %}">Home</a></li>
+               <li class="breadcrumb-item"><a class="breadcrumbtab" href="{% url 'forum' %}">Select Region</a></li>
+               <li class="breadcrumb-item active">{{ thread.name }}</li>
+           </ol>
+           <div id="postBox">
+               <h2>{{ thread.name }}</h2>
+               <table class="table">
+                   <tbody>
+                   <tr>
+                       <th>Client</th>
+                       <th>Date of Birth</th>
+                       <th>Diagnosis</th>
+                       <th>Last Update</th>
+                   </tr>
+                   <tr>
+                       <td><strong>{{ thread.name }}</strong></td>
+                       <td><strong>{{ thread.DOB }}</strong></td>
+                       <td><strong>{{ thread.diagnosis }}</strong></td>
+                       <td>
+                           <strong><time datetime="{{ thread.created_at }}">
+                                 {{ thread.created_at|started_time }}
+                           </time></strong>
+                       </td>
+                   </tr>
+                   <tr>
+                       <td>GMFCS Level</td><td>{{ thread.GMFCS }}</td><td></td>
+                   </tr>
+                   <tr>
+                       <td>Therapist</td><td>{{ thread.therapist }}</td><td></td>
+                   </tr>
+                   <tr>
+                       <td>Lying</td><td>{{ thread.lying }}</td><td></td>
+                   </tr>
+                   <tr>
+                       <td>Sitting</td><td>{{ thread.sitting }}</td><td></td>
+                   </tr>
+                   <tr>
+                       <td>Standing</td><td>{{ thread.standing }}</td><td></td>
+                   </tr>
+                   <tr>
+                       <td>Walking</td><td>{{ thread.walking }}</td><td></td>
+                   </tr>
+                   <tr>
+                       <td>Date of last Hip x-ray</td><td>{{ thread.Hipxray }}</td><td></td>
+                   </tr>
+                   <tr>
+                       <td>Next Hip X-ray due</td><td>{{ thread.NextHipxray }}</td><td></td>
+                   </tr>
+                   <tr>
+                       <td>Date of last spine x-ray</td><td>{{ thread.spineXray }}</td><td></td>
+                   </tr>
+                   <tr>
+                       <td>Next spine X-ray due</td><td>{{ thread.NextspineXray }}</td><td></td>
+                   </tr>
+                   <tr>
+                       <td>BTX-A</td><td>{{ thread.BTXA }}</td><td></td>
+                   </tr>
+                   <tr>
+                       <td>Baclofen </td><td>{{ thread.baclofen }}</td><td></td>
+                   </tr>
+                   <tr>
+                      <td>SDR</td><td>{{ thread.SDR }}</td><td></td>
+                   </tr>
+                   <tr>
+                       <td>Other</td><td>{{ thread.other }}</td><td></td>
+                   </tr>
+                   <tr>
+                       <td>Previous Orthopaedic Management</td><td>{{ thread.PreviousOrthopaedicManagement }}</td><td></td>
+                   </tr>
+                   <tr>
+                       <td>Orthopaedic Goals</td><td>{{ thread.OrthopaedicGoals }}</td><td></td>
+                   </tr>
+                   <tr>
+                       <td>Functional Goals</td><td>{{ thread.FunctionalGoals }}</td><td></td>
+                   </tr>
+                   </tbody>
+               </table>
+
+
+
+       </div>
+  
+   <div>
+       {% for post in thread.posts.all %}
+           {% include "post.html" %}
+       {% endfor %}
+      {% if user.is_authenticated %}
+        <p>
+            <a href="{% url 'new_post' thread.id %}" class="btn btn-primary">New Comment</a>
+        </p>
+    {% endif %}
+   </div>
+       </div>
+    </div>
+ </section>
+{% endblock %}

@@ -1,0 +1,229 @@
+body {
+    margin-top: 40px;
+    background:url("/static/img/anamologo.jpg") no-repeat fixed center bottom;
+}
+.nav-pills>li>a {
+    color: white;
+    font-size: 12pt;
+}
+.nav>li>a {
+    display: block;
+    padding: 8px 10px;
+}
+.nav>li>a:hover, .nav>li>a:focus {
+    background-color: transparent;
+    color: black;
+}
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    border-color: transparent;
+}
+.navbar-header, .navbar-fixed-top .navbar-collapse, .navbar-fixed-bottom .navbar-collapse {
+    min-height: 50px;
+    background-color: #f15e25;
+}
+.navbar-brand {
+    font-size: 20px;
+}
+.container,
+#comment-box,
+.container-fluid{
+    box-shadow: 0 5px 10px rgba(22, 50, 60, 0.5);
+}
+.container-fluid {
+    height: 60px;
+}
+.carImg{
+    max-width: 100%;
+}
+.navbar {
+      margin-bottom: 0;
+      border: 0;
+      font-size: 11px !important;
+      letter-spacing: 3px;
+      opacity: 0.9;
+}
+.navbar-nav li a,
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus,
+.navbar-nav li.active a,
+.navbar-nav li a:hover,
+.navbar-nav li a:focus,
+.open .dropdown-toggle,
+.dropdown-menu{
+      background-color: #f15e25 !important;
+  }
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+}
+.container {
+    padding: 15px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    background: linear-gradient(90deg,
+        rgba(255, 255, 255, 0.4) 0%,
+        rgba(255, 255, 255, 0.5) 25%,
+        rgba(255, 255, 255, 0.6) 50%,
+        rgba(255, 255, 255, 0.5) 75%,
+        rgba(255, 255, 255, 0.4) 100%);
+}
+footer, .container-fluid,
+.progress-bar{
+    background-color: #f15e25;
+}
+footer {
+    width: 100%;
+    bottom: 0;
+    position: fixed;
+    min-height: 50px;
+    display: block;
+    margin-top: 100px;
+}
+.footlinks {
+    line-height: 15px;
+    list-style-type: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+.footlink {
+    display: inline-block;
+    list-style-type: none;
+}
+button, .btn, .btn:focus,
+.btn:active,
+.btn:hover{
+    background-image: linear-gradient(#41b38f, #36947d, #2b7566, #2b7563, #163c33);
+    color: #ffffff;
+    border: transparent;
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+.btn:hover {
+    opacity: 0.8;
+}
+#loginBtn, #supportBtn{
+    padding:5% 5% 5%;
+}
+#loginBtn, #supportBtn {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+.card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.carImg{
+    opacity: 0.4;
+}
+.card-text{
+    color: #555555;
+    display: block;
+}
+tbody>tr{
+    background-color: transparent;
+}
+tbody>tr:hover{
+    background: linear-gradient(90deg,
+        rgba(255, 255, 255, 0.8) 0%,
+        rgba(255, 255, 255, 0.9) 25%,
+        rgba(255, 255, 255, 1) 50%,
+        rgba(255, 255, 255, 0.9) 75%,
+        rgba(255, 255, 255, 0.8) 100%);
+}
+.table-striped>tbody>tr:nth-of-type(odd) {
+    background-color: transparent;
+}
+.table-striped>tbody>tr:nth-of-type(even) {
+    background-color: transparent;
+}
+.table>thead>tr>th, .table>tbody>tr>th,
+.table>tfoot>tr>th, .table>thead>tr>td,
+.table>tbody>tr>td, .table>tfoot>tr>td{
+    padding-left: 10%;
+}
+a{
+    color: #555555;
+    font-weight: bold;
+}
+a:hover, a:focus{
+    color: #4197b3;
+    text-decoration: none;
+}
+.footcontent,
+.breadcrumbtab {
+	color: #4197b3;
+}
+.footcontent:hover,
+.breadcrumbtab:hover,
+.breadcrumbtab:focus{
+	color: #16323c;
+	text-decoration: none;
+}
+.jumbotron, .alert {
+    color: #214C5A;
+    max-width: 90%;
+    margin: auto;
+    padding: 10%;
+}
+.footericons{
+    color: #ffffff;
+}
+
+/* --------------------FORUM STYLE---------------------- */
+#comment-box {
+    min-height: 100px;
+    padding: 5px;
+}
+.details {
+    margin:10px;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid rgb(221, 221, 221);
+}
+.comment-content {
+    align-self:baseline;
+    width: 100%;
+    padding: 10px;
+    min-height: 50px;
+    background: linear-gradient(90deg,
+    rgba(255, 255, 255, 0.6) 0%,
+    rgba(255, 255, 255, 0.7) 25%,
+    rgba(255, 255, 255, 0.8) 50%,
+    rgba(255, 255, 255, 0.7) 75%,
+    rgba(255, 255, 255, 0.6) 100%);
+}
+
+
+/* --------------------FORUM STYLE---------------------- */
+
+@media screen and (min-width: 750px) {
+
+    .nav>li>a:hover, .nav>li>a:focus {
+    background-color: transparent;
+    }
+    .nav-pills>li>a {
+        color: white;
+        font-size: 10pt;
+    }
+    .navBtn {
+        position: relative;
+        display: inline;
+        padding: 8px;
+        vertical-align: sub;
+    }
+    .card-text{
+        color: #555555;
+        display: block;
+    }
+}
+@media screen and (max-width: 450px) {
+    .card-text{
+    color: #555555;
+    display: none;
+}
+}

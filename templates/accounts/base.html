@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" href="{% static "img/logo.png" %}"/>
+    <title>Irish Camping App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome-4.5.0/css/font-awesome.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cerulean/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js"></script>
+
+    <!-- Custom CSS -->
+    <link href="{% static "css/custom.css" %}" rel="stylesheet">
+    {% block head_js %}{% endblock head_js %}
+</head>
+<body>
+   <!--NavBar-->
+   <div class="masthead">
+       <nav class="navbar navbar-default navbar-fixed-top">
+           <div class="container-fluid">
+               <div class="navbar-header">
+                   <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                       <span class="icon-bar"></span>
+                       <span class="icon-bar"></span>
+                       <span class="icon-bar"></span>
+                   </button>
+                   <a class="navbar-brand" href="{% url 'index' %}">Irish Camping App</a>
+               </div>
+               <div class="collapse navbar-collapse" id="myNavbar">
+                   <ul class="nav navbar-nav navbar-right">
+                       <li class="navBtn"><a  href="{% url 'about' %}">About</a></li>
+                       <li class="navBtn"><a  href="{% url 'forum' %}">Forum</a></li>
+                       <li class="navBtn"><a  href="{% url 'contact' %}">Contact Us</a></li>
+                       {% if user.is_authenticated %}
+                       <li class="navBtn"><a  href="{% url 'profile' %}"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
+                       <li class="navBtn"><a  href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-in"></span> Log Out</a></li>
+                       {% else %}
+                       <li class="navBtn"><a  href="{% url 'register' %}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                       <li class="navBtn"><a  href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                       {% endif %}
+                   </ul>
+               </div>
+           </div>
+       </nav>
+   </div>
+   <hr>
+   <div class="container">
+    {% if messages %}
+        <div class="alert alert-success">
+            <div class="messages">
+                {% for message in messages %}
+                    {{ message }}
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+
+ 
+   <div class="container">
+       {% block content %}
+       {% endblock %}
+   </div>
+</div>   
+    <hr>
+     <!--Footer-->
+    <footer class="text-center">
+        <a id="scrollBtn" class="up-arrow" onclick="topFunction()">
+            <span class="glyphicon glyphicon-chevron-up"></span>
+        </a><br>
+        <p class="footertext">Site designed and built by Aisling O'Donovan</p>
+            <ul class="footlinks">
+                <li class="footlink">
+                    <i class="fa fa-envelope" aria-hidden="true"></i> <a class="footcontent" href="mailto:aisling1odonvan@gmail.com">info@irishcamping.com
+                    </a>
+                </li>
+                <li class="footlink">
+                    <i class="fa fa-twitter" aria-hidden="true"></i> <a class="footcontent" href="https://twitter.com/CodersInstitute" target=_blank>Find us on Twitter
+                    </a>
+                </li>
+                <li class="footlink">
+                    <i class="fa fa-facebook" aria-hidden="true"></i> <a class="footcontent" href="https://www.facebook.com/Code.InstituteIRL/" target=_blank>Find us on Facebook
+                    </a>
+                </li>
+            </ul>
+        <br>
+    </footer>
+      <!--Footer-->
+
+</body>
+ 
+</html>

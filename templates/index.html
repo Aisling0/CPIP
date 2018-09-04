@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% get_static_prefix as STATIC_PREFIX %}
+
+
+    <header>
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+		  <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <div id="loginBtn">
+                        <img class="carImg"  src="{{ STATIC_PREFIX }}img/data.jpg"/>
+                        <div class="card">
+                            <h3 class="card-header">Access the Database</h3>
+                            <br>
+                            <div class="card-block">
+                                <h4 class="card-text">Access to client database requires administration permissions</h4>
+                            </div>
+                            <div class="card-footer">
+                                {% if user.is_authenticated %}
+                                    <a href="{% url 'forum' %}" class="btn btn-success">Client Database <span> <i class="fa fa-users" aria-hidden="true"></i></span></a>
+                                {% else %}
+                                    <a href="{% url 'login' %}" class="btn btn-success">Login <span class="glyphicon glyphicon-log-in"></span></a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div id="supportBtn">
+                        <img class="carImg" src="{{ STATIC_PREFIX }}img/support.jpg"/>
+                        <div class="card">
+                            <h3 class="card-header">Contact Support</h3>
+                            <br>
+                            <div class="card-block">
+                                <h4 class="card-text">Contact Anamo Support Team for administration assistance</h4>
+                            </div>
+                            <div class="card-footer">
+                                <a href="{% url 'forum' %}" class="btn btn-success">Support <span class="glyphicon glyphicon-comment"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Page Content -->
+    <div>
+        <h1></h1>
+        <div class="row">
+
+
+        </div>
+    </div>
+{% endblock %}

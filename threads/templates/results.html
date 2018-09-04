@@ -1,0 +1,13 @@
+{% if results %}
+  {% for Thread in results %}
+    {{ Thread.name }}
+    {{ Thread.GMFCS }}
+    {{ Thread.xxxx }}
+  {% endfor %}
+{% else %}
+    <h3 class='error'>Please enter a valid UID</h3>
+    <form method="get" action="/search/">
+      Search Database:<input type="text" name="q" id="id_q" value="{{ query }}"/>
+      <input type="submit" value="Search" />
+    </form>
+{% endif %}

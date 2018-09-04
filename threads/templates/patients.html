@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load thread_extras %}
+{% block content %}
+{% load bootstrap_tags %}
+    <div>
+        <h1></h1>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a class="breadcrumbtab" href="{% url 'index' %}">Home</a></li>
+            <li class="breadcrumb-item active">Select Region</li>
+        </ol>
+    </div>
+    <div>
+        {% if user.is_authenticated %}
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Region</th>
+                        <th>Number of Clients</th>
+                    </tr>
+                </thead>
+                <tr>
+                    {% for subject in subjects %}
+                    <td>
+                        <a href="{% url 'threads' subject.id %}">{{ subject.name }}</a>
+                    </td>
+                    <td>{{ subject.threads.count }}</td>
+                </tr>
+                    {% endfor %}
+            </table>
+        {% else %}
+            <div class="alert alert-danger"><strong>This information can only be viewed by authorised personnel. </strong> <br>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}
