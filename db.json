@@ -49,8 +49,8 @@
 },
 {
     "fields": {
-        "domain": "example.com",
-        "name": "example.com"
+        "domain": "anamosolutions-enableireland.herokuapp.com",
+        "name": "anamosolutions-enableireland.herokuapp.com"
     },
     "model": "sites.site",
     "pk": 1
