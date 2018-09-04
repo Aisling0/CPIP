@@ -10,8 +10,8 @@ DATABASES = {
 }
 
 
-SITE_URL = 'https://your-heroku-app.herokuapp.com'
-ALLOWED_HOSTS.append('your-heroku-app.herokuapp.com')
+SITE_URL = 'https://anamosolutions-enableireland.herokuapp.com'
+ALLOWED_HOSTS.append('anamosolutions-enableireland.herokuapp.com')
 
 # Log DEBUG information to the console
 LOGGING = {
