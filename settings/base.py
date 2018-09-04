@@ -10,7 +10,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '%9ddz2pgl3c82dhb_f-crhpzd_3fh*j)x+@@_cam46@r3=!yry'
 
 ALLOWED_HOSTS = ['127.0.0.1', 'anamosolutions-enableireland.herokuapp.com']
-SITE_ID = 1
+SITE_ID = 2
 
 INTERNAL_IPS = ('127.0.0.1',)
 
