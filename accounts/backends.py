@@ -3,12 +3,6 @@ from models import User
 
 class EmailAuth(object):
     def authenticate(self, email=None, password=None):
-        """
-        Get an instance of User using the supplied email and check its password
-        :param email:
-        :param password:
-        :return:
-        """
 
         try:
             user = User.objects.get(email=email)
@@ -19,11 +13,7 @@ class EmailAuth(object):
             return None
 
     def get_user(self, user_id):
-        """
-        Used by the django authentication system to retrieve an instance of User
-        :param user_id:
-        :return:
-        """
+
         try:
             user = User.objects.get(pk=user_id)
             if user.is_active:
