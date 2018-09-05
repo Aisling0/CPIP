@@ -1,9 +1,9 @@
 from django.contrib import messages, auth
+from django.contrib.auth.decorators import login_required
+from accounts.forms import UserRegistrationForm, UserLoginForm
 from django.core.urlresolvers import reverse
 from django.shortcuts import render, redirect
 from django.template.context_processors import csrf
-from accounts.forms import UserRegistrationForm, UserLoginForm
-from django.contrib.auth.decorators import login_required
 from django.conf import settings
 import datetime
 from django.views.decorators.csrf import csrf_exempt
@@ -15,7 +15,6 @@ import json
 
 
 def register(request):
-
     if request.method == 'POST':
         form = UserRegistrationForm(request.POST)
         if form.is_valid():
@@ -35,20 +34,12 @@ def register(request):
     else:
         form = UserRegistrationForm()
 
-    args = {'form': form}
-    args.update(csrf(request))
-
-    return render(request, 'register.html', args)
-
-
-"""
-The login_required decorator ensures only those users who are logged in can see their profile.
-"""
+        context = {'form': form}
+        return render(request, 'register.html', context)
 
 
 @login_required(login_url='/login/')
 def profile(request):
-
     return render(request, 'profile.html')
 
 

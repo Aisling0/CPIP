@@ -37,8 +37,6 @@ AUTH_USER_MODEL = 'accounts.User'
 AUTHENTICATION_BACKENDS = ('django.contrib.auth.backends.ModelBackend',
                            'accounts.backends.EmailAuth',)
 
-LOGIN_URL = '/login/'
-
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -71,7 +69,6 @@ TEMPLATES = [
     },
 ]
 
-
 WSGI_APPLICATION = 'CPIP_Test.wsgi.application'
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -92,7 +89,6 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
