@@ -42,7 +42,7 @@ def register(request):
     args = {'form': form}
     args.update(csrf(request))
 
-    return render(request, 'register.html', args)
+    return render(request, '/register.html/', args)
 
 
 """
@@ -57,7 +57,7 @@ def profile(request):
     :param request:
     :return:
     """
-    return render(request, 'profile.html')
+    return render(request, '/profile.html/')
 
 
 def login(request):
@@ -85,7 +85,7 @@ def login(request):
 
     args = {'form': form}
     args.update(csrf(request))
-    return render(request, 'login.html', args)
+    return render(request, '/login.html/', args)
 
 
 def logout(request):
