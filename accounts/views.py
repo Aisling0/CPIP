@@ -1,10 +1,17 @@
 from django.contrib import messages, auth
-from accounts.forms import UserRegistrationForm
 from django.core.urlresolvers import reverse
 from django.shortcuts import render, redirect
 from django.template.context_processors import csrf
 from accounts.forms import UserRegistrationForm, UserLoginForm
 from django.contrib.auth.decorators import login_required
+from django.conf import settings
+import datetime
+from django.views.decorators.csrf import csrf_exempt
+from django.http import HttpResponse
+from models import User
+import stripe
+import arrow
+import json
 
 
 def register(request):
@@ -22,6 +29,7 @@ def register(request):
                                      password=request.POST.get('password1'))
 
             if user:
+                auth.login(request, user)
                 messages.success(request, "You have successfully registered")
                 return redirect(reverse('profile'))
 

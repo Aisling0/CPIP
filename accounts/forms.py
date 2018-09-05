@@ -44,7 +44,7 @@ class UserRegistrationForm(UserCreationForm):
         """
         Overrides the default save method.
         """
-        instance = super(UserRegistrationForm, self).save(commit=False)
+        instance = super(UserRegistrationForm, self).save()
 
         # Automatically set to email address to create a unique identifier as the field cannot be left empty on save.
         instance.username = instance.email
